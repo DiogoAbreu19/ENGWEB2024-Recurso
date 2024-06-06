@@ -37,7 +37,8 @@ Para colocar o FrontEnd relativo ao segundo exercício a correr, executa-se os s
 
 ```code
 npm install
-npm start```
+npm start
+```
 
 # Docker 
 
