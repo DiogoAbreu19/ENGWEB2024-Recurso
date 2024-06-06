@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  .w3-card-4
+    header.w3-pink
+      h2.w3-center Livros
+    .w3-container
+      table.w3-table-all
+        thead
+          tr
+            th id
+            th title
+            th author
+            th publishDate
+            th pages
+        tbody
+          each livro in livros
+            tr
+              td
+                a(href='/' + livro._id)= livro._id
+              td= livro.title
+              td= livro.author
+              td= livro.publishDate
+              td= livro.pages

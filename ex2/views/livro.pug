@@ -1,0 +1,76 @@
+extends layout
+
+block content
+  a(href='/') Voltar
+  .w3-card-4
+    header.w3-pink
+      h2.w3-center Livro
+    .w3-container
+      if livro._id
+        p id: #{livro._id}
+      if livro.title
+        p Título: #{livro.title}
+      if livro.series
+        p Série: #{livro.series}
+      if livro.author
+        p Autor: #{livro.author}
+      if livro.rating
+        p Avaliação: #{livro.rating}
+      if livro.description
+        p Descrição: #{livro.description}
+      if livro.language
+        p Idioma: #{livro.language}
+      if livro.isbn
+        p ISBN: #{livro.isbn}
+      if livro.genres.length > 0
+        p Gêneros:
+          ul
+            each genre in livro.genres
+              li= genre
+      if livro.characters.length > 0
+        p Personagens:
+          ul
+            each character in livro.characters
+              li= character
+      if livro.bookFormat
+        p Formato do Livro: #{livro.bookFormat}
+      if livro.edition
+        p Edição: #{livro.edition}
+      if livro.pages
+        p Páginas: #{livro.pages}
+      if livro.publisher
+        p Editora: #{livro.publisher}
+      if livro.publishDate
+        p Data de Publicação: #{livro.publishDate}
+      if livro.firstPublishDate
+        p Primeira Data de Publicação: #{livro.firstPublishDate}
+      if livro.awards.length > 0
+        p Prêmios:
+          ul
+            each award in livro.awards
+              li= award
+      if livro.numRatings
+        p Número de Avaliações: #{livro.numRatings}
+      if livro.ratingsByStars.length > 0
+        p Avaliações por Estrelas:
+          ul
+            each rating in livro.ratingsByStars
+              li= rating
+      if livro.likedPercent
+        p Percentual de Curtidas: #{livro.likedPercent}
+      if livro.setting.length > 0
+        p Configuração:
+          ul
+            each setting in livro.setting
+              li= setting
+      if livro.coverImg
+        p
+          | Capa:
+          br
+          img(src=livro.coverImg, alt='Capa do Livro')
+      if livro.bbeScore
+        p Pontuação BBE: #{livro.bbeScore}
+      if livro.bbeVotes
+        p Votos BBE: #{livro.bbeVotes}
+      if livro.price
+        p Preço: #{livro.price}
